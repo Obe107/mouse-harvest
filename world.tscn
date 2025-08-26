@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmsnf5b6g5lbb"]
+[gd_scene load_steps=4 format=3 uid="uid://dmsnf5b6g5lbb"]
 
 [ext_resource type="TileSet" uid="uid://c8rpup1h83kjc" path="res://new_tile_set.tres" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://go135mgub2qi" path="res://scripts/world.gd" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://6vi1koenk4si" path="res://inventory_gui.tscn" id="3_tlwt5"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_fj7yv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+
+[node name="InventoryGUI" parent="Camera2D" instance=ExtResource("3_tlwt5")]
+offset_left = -237.0
+offset_top = -132.0
+offset_right = -197.0
+offset_bottom = -92.0
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = 116.0
+offset_top = -129.0
+offset_right = 236.0
+offset_bottom = -106.0
+text = "ItemNameHere"
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -19,12 +36,3 @@ tile_set = ExtResource("1_f3sb7")
 
 [node name="DecorTileLayer" type="TileMapLayer" parent="TileMap"]
 tile_set = ExtResource("1_f3sb7")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 964.0
-offset_top = 39.0
-offset_right = 1084.0
-offset_bottom = 62.0
-text = "ItemNameHere"
-
-[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="TileItem" load_steps=2 format=3 uid="uid://cw4mwrqytx6nu"]
+[gd_resource type="Resource" script_class="TileItem" load_steps=3 format=3 uid="uid://cw4mwrqytx6nu"]
 
 [ext_resource type="Script" uid="uid://cpy2oiv8tlons" path="res://scripts/item/TileItem.gd" id="1_hn8hu"]
+[ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/farmland.png" id="2_sts8u"]
 
 [resource]
 script = ExtResource("1_hn8hu")
@@ -8,4 +9,5 @@ tile_index = 0
 tile_type = 1
 item_name = "Farmland"
 type = 1
+texture = ExtResource("2_sts8u")
 metadata/_custom_type_script = "uid://cpy2oiv8tlons"

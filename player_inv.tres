@@ -1,9 +1,38 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://d1hd88hg1j0k8"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=10 format=3 uid="uid://d1hd88hg1j0k8"]
 
-[ext_resource type="Script" uid="uid://cbx8suofjh7ei" path="res://scripts/item/InventoryItem.gd" id="1_ce8o5"]
+[ext_resource type="Script" uid="uid://buhcngy2bmvkl" path="res://scripts/InventorySlot.gd" id="1_61b3x"]
 [ext_resource type="Script" uid="uid://be7gjqvxd707i" path="res://scripts/Inventory.gd" id="2_ps603"]
+[ext_resource type="Resource" uid="uid://dup0lgtvekp5p" path="res://items/crop.tres" id="2_q1r45"]
+[ext_resource type="Resource" uid="uid://oexf5fy6ujdv" path="res://items/object.tres" id="3_61b3x"]
+
+[sub_resource type="Resource" id="Resource_3c1vy"]
+script = ExtResource("1_61b3x")
+item = ExtResource("2_q1r45")
+amount = 1
+metadata/_custom_type_script = "uid://buhcngy2bmvkl"
+
+[sub_resource type="Resource" id="Resource_2vbhl"]
+script = ExtResource("1_61b3x")
+item = ExtResource("3_61b3x")
+amount = 1
+metadata/_custom_type_script = "uid://buhcngy2bmvkl"
+
+[sub_resource type="Resource" id="Resource_1vso5"]
+script = ExtResource("1_61b3x")
+amount = 0
+metadata/_custom_type_script = "uid://buhcngy2bmvkl"
+
+[sub_resource type="Resource" id="Resource_8wx64"]
+script = ExtResource("1_61b3x")
+amount = 0
+metadata/_custom_type_script = "uid://buhcngy2bmvkl"
+
+[sub_resource type="Resource" id="Resource_dpcxh"]
+script = ExtResource("1_61b3x")
+amount = 0
+metadata/_custom_type_script = "uid://buhcngy2bmvkl"
 
 [resource]
 script = ExtResource("2_ps603")
-item_slots = Array[ExtResource("1_ce8o5")]([null, null])
+inventory_slots = Array[ExtResource("1_61b3x")]([SubResource("Resource_3c1vy"), SubResource("Resource_2vbhl"), SubResource("Resource_1vso5"), SubResource("Resource_8wx64"), SubResource("Resource_dpcxh")])
 metadata/_custom_type_script = "uid://be7gjqvxd707i"

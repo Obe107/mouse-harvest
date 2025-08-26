@@ -24,6 +24,10 @@ var object_item: InventoryItem = preload("res://items/object.tres")
 var crop_item: CropItem = preload("res://items/crop.tres")
 var crop_item2: CropItem = preload("res://items/crop2.tres")
 
+var player_inv: Inventory = preload("res://player_inv.tres")
+@onready var player_inv_gui = $Camera2D/InventoryGUI
+@onready var debug_label = $Camera2D/Label
+
 func _ready():
 	TileManager.setup(tilemap_layers)
 	generate_map()
@@ -98,6 +102,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_4:
 				Global.selected_item = crop_item2
 				print("Selected:", Global.selected_item.item_name)
+			
+			KEY_8:
+				player_inv.insert_item(farmland_item, 1)
+				
+			KEY_9:
+				player_inv.remove_item(farmland_item, 1)
 
 
 
@@ -120,4 +130,4 @@ func _process(delta: float) -> void:
 			last_grid_coords = grid_coords
 
 	
-	$Label.text = Global.selected_item.item_name
+	debug_label.text = Global.selected_item.item_name

@@ -6,7 +6,7 @@ class_name InventoryItem
 @export var item_name: String = ""
 #@export var desc: String = ""
 @export var type: ItemType = ItemType.OTHER
-#@export var texture: Texture2D
+@export var texture: Texture2D
 
 #@export_category("Properties")
 #@export var max_stack: int = 999

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CropItem" load_steps=2 format=3 uid="uid://rfvb5fn7c3wn"]
+[gd_resource type="Resource" script_class="CropItem" load_steps=3 format=3 uid="uid://rfvb5fn7c3wn"]
 
 [ext_resource type="Script" uid="uid://c32dc0vrdwugc" path="res://scripts/item/CropItem.gd" id="1_37h7r"]
+[ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/farmland.png" id="2_ig3hj"]
 
 [resource]
 script = ExtResource("1_37h7r")
@@ -10,4 +11,5 @@ tile_index = 7
 tile_type = 2
 item_name = "Crop2"
 type = 1
+texture = ExtResource("2_ig3hj")
 metadata/_custom_type_script = "uid://c32dc0vrdwugc"
