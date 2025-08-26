@@ -4,6 +4,9 @@ extends Node2D
 	$TileMap/FarmlandTileLayer, $TileMap/GrassTileLayer, $TileMap/CropsTileLayer, $TileMap/DecorTileLayer
 ]
 
+@onready var player_inv_gui = $Camera2D/InventoryGUI
+@onready var debug_label = $Camera2D/Label
+
 var placing_tile := false
 var removing_tile := false
 var harvesting_tile := false
@@ -25,15 +28,12 @@ var crop_item: CropItem = preload("res://items/crop.tres")
 var crop_item2: CropItem = preload("res://items/crop2.tres")
 
 var player_inv: Inventory = preload("res://player_inv.tres")
-@onready var player_inv_gui = $Camera2D/InventoryGUI
-@onready var debug_label = $Camera2D/Label
+
 
 func _ready():
 	TileManager.setup(tilemap_layers)
 	generate_map()
 
-	Global.selected_item = farmland_item
-	print("Selected:", Global.selected_item.get_type_as_string())
 
 
 
@@ -116,7 +116,7 @@ func _process(delta: float) -> void:
 	var grid_coords = (get_global_mouse_position() / grid_size).floor()
 	if placing_tile: 	# Only place a tile if the mouse is being held down
 		if grid_coords != last_grid_coords: 	# Check if we've moved into a new cell before placing
-			TileManager.place_tile(grid_coords, Global.selected_item)
+			TileManager.place_tile(grid_coords, Global.selected_item, player_inv)
 			last_grid_coords = grid_coords
 
 	elif removing_tile:
@@ -129,5 +129,7 @@ func _process(delta: float) -> void:
 			TileManager.harvest_crop(grid_coords)
 			last_grid_coords = grid_coords
 
-	
-	debug_label.text = Global.selected_item.item_name
+	if Global.selected_item:
+		debug_label.text = Global.selected_item.item_name
+	else:
+		debug_label.text = "Null Item Selected"

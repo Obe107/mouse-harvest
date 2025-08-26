@@ -27,7 +27,7 @@ func setup(_tilemap_layers):
 	tilemap_layers = _tilemap_layers
 
 
-func place_tile(grid_coords: Vector2, tile_item: TileItem) -> void:
+func place_tile(grid_coords: Vector2, tile_item: TileItem, inventory: Inventory) -> void:
 	# Determine the correct layer automatically
 	var layer = type_to_layer.get(tile_item.tile_type, Layer.DECOR)
 	
@@ -46,7 +46,6 @@ func place_tile(grid_coords: Vector2, tile_item: TileItem) -> void:
 			# Remove the grass tile above
 			BetterTerrain.set_cell(tilemap_layers[Layer.GROUND], grid_coords, -1)
 			BetterTerrain.update_terrain_cell(tilemap_layers[Layer.GROUND], grid_coords, true)
-
 
 
 	# If this is a crop, check if there is farmland below (layer 0)
@@ -69,6 +68,8 @@ func place_tile(grid_coords: Vector2, tile_item: TileItem) -> void:
 	# Place the tile visually
 	print("Placing a tile with tile_index " + str(tile_item.tile_index) + " at " + str(grid_coords) + " on layer " + str(layer))
 	BetterTerrain.set_cell(tilemap_layers[layer], grid_coords, tile_item.tile_index)
+	if inventory:
+		inventory.remove_item(tile_item, 1)
 
 
 func remove_tile(grid_coords: Vector2, layer: int) -> void:

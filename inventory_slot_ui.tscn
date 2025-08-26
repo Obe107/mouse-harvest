@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ct2fa5f7md76f" path="res://inventory_slot_ui.gd" id="1_tpl3w"]
 [ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/farmland.png" id="2_xjhvh"]
 
-[node name="inventory_slot_ui" type="Panel"]
+[node name="inventory_slot_ui" type="Button"]
 custom_minimum_size = Vector2(64, 16)
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,3 +28,5 @@ stretch_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "Item Name"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
