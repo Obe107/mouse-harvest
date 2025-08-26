@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bd87v1w3t5b8p"]
+
+[ext_resource type="Script" uid="uid://cbx8suofjh7ei" path="res://scripts/item/InventoryItem.gd" id="1_tp76r"]
+
+[resource]
+script = ExtResource("1_tp76r")
+item_name = "Break Tool"
+type = 0
+tile_index = -1
+metadata/_custom_type_script = "uid://cbx8suofjh7ei"

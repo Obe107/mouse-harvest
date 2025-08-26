@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TileItem" load_steps=2 format=3 uid="uid://oexf5fy6ujdv"]
+
+[ext_resource type="Script" uid="uid://cpy2oiv8tlons" path="res://scripts/item/TileItem.gd" id="1_tru3v"]
+
+[resource]
+script = ExtResource("1_tru3v")
+tile_index = 2
+tile_type = 3
+item_name = "Object"
+type = 1
+metadata/_custom_type_script = "uid://cpy2oiv8tlons"

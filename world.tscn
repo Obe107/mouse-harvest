@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmsnf5b6g5lbb"]
+
+[ext_resource type="TileSet" uid="uid://c8rpup1h83kjc" path="res://new_tile_set.tres" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://go135mgub2qi" path="res://scripts/world.gd" id="1_fj7yv"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_fj7yv")
+
+[node name="TileMap" type="Node" parent="."]
+
+[node name="FarmlandTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("1_f3sb7")
+
+[node name="GrassTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("1_f3sb7")
+
+[node name="CropsTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("1_f3sb7")
+
+[node name="DecorTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("1_f3sb7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 964.0
+offset_top = 39.0
+offset_right = 1084.0
+offset_bottom = 62.0
+text = "ItemNameHere"
+
+[node name="Camera2D" type="Camera2D" parent="."]
