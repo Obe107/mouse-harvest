@@ -162,7 +162,7 @@ func harvest_crop(grid_coords: Vector2, inventory: Inventory):
 		# Give player items here (from crop_data["item"])
 		print("Harvested crop", crop_data["item"].item_name, " at", grid_coords)
 		Global.total_harvested_crops += 1
-		inventory.insert_item(crop_data["item"], 1)
+		inventory.insert_item(crop_data["item"].growth_result, 1)
 
 		# Remove tile visually
 		BetterTerrain.set_cell(tilemap_layers[2], grid_coords, -1)

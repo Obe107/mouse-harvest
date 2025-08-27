@@ -43,6 +43,7 @@ func insert_item(item: InventoryItem, amount: int):
 				#	hold_item.emit(item)
 				return
 		
+		# Increase Slots Size if all slots are full
 		for slot in inventory_slots:
 			if slot.item != null:
 				print("Inventory full! Adding a new slot.")

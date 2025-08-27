@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=12 format=3 uid="uid://d1hd88hg1j0k8"]
 
 [ext_resource type="Script" uid="uid://buhcngy2bmvkl" path="res://scripts/inventory/InventorySlotRes.gd" id="1_3c1vy"]
-[ext_resource type="Resource" uid="uid://dup0lgtvekp5p" path="res://items/crop_tile_items/crop.tres" id="2_2vbhl"]
+[ext_resource type="Resource" uid="uid://dup0lgtvekp5p" path="res://items/crop_tile_items/wheat_seeds.tres" id="2_rrnhb"]
 [ext_resource type="Resource" uid="uid://oexf5fy6ujdv" path="res://items/objects/object.tres" id="3_1vso5"]
 [ext_resource type="Resource" uid="uid://c5800isf0obl3" path="res://items/tile_items/grass_tile.tres" id="5_dpcxh"]
 [ext_resource type="Resource" uid="uid://bd87v1w3t5b8p" path="res://items/tools/tool.tres" id="6_rnj07"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_3c1vy"]
 script = ExtResource("1_3c1vy")
-item = ExtResource("2_2vbhl")
+item = ExtResource("2_rrnhb")
 amount = 1000
 metadata/_custom_type_script = "uid://buhcngy2bmvkl"
 

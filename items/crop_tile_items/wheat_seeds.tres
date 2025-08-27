@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CropItem" load_steps=4 format=3 uid="uid://dup0lgtvekp5p"]
+
+[ext_resource type="Resource" uid="uid://cojb3x6275034" path="res://items/crop_items/wheat.tres" id="1_fv2t0"]
+[ext_resource type="Script" uid="uid://c32dc0vrdwugc" path="res://scripts/item/CropItem.gd" id="1_y056a"]
+[ext_resource type="Texture2D" uid="uid://opdw42q82f43" path="res://art/items/wheat_seeds.png" id="2_fv2t0"]
+
+[resource]
+script = ExtResource("1_y056a")
+growth_time = 10.0
+growth_stages = 4
+growth_result = ExtResource("1_fv2t0")
+tile_index = 3
+tile_type = 2
+item_name = "Wheat Seeds"
+type = 1
+texture = ExtResource("2_fv2t0")
+metadata/_custom_type_script = "uid://c32dc0vrdwugc"
