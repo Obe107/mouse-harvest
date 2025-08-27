@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l7t062rwyxoa"
-path="res://.godot/imported/obsticle.png-eba043d3154398c9f7025de50350d7ad.ctex"
+uid="uid://deugabrljefms"
+path="res://.godot/imported/wheat.png-8a1b48f65cdfd8680f1975c816dcf843.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/obsticle.png"
-dest_files=["res://.godot/imported/obsticle.png-eba043d3154398c9f7025de50350d7ad.ctex"]
+source_file="res://art/tiles/wheat.png"
+dest_files=["res://.godot/imported/wheat.png-8a1b48f65cdfd8680f1975c816dcf843.ctex"]
 
 [params]
 

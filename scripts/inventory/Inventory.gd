@@ -5,8 +5,6 @@ signal inventory_updated
 
 @export var inventory_slots : Array[InventorySlot]
 
-
-
 func insert_item(item: InventoryItem, amount: int):
 		# Check if item is stackable and already exists in the inventory
 		for slot in inventory_slots:
@@ -43,6 +41,17 @@ func insert_item(item: InventoryItem, amount: int):
 				#if i == global.currently_selected:
 					#print("Collected Item Held")
 				#	hold_item.emit(item)
+				return
+		
+		for slot in inventory_slots:
+			if slot.item != null:
+				print("Inventory full! Adding a new slot.")
+				var new_slot := InventorySlot.new()
+				new_slot.item = item
+				new_slot.amount = amount
+				inventory_slots.append(new_slot)
+				inventory_updated.emit()
+				
 				return
 
 # Checks if an item is in the invenentory

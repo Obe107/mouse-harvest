@@ -7,39 +7,17 @@
 [node name="InventoryGUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 65.0
+offset_bottom = 270.0
 script = ExtResource("1_t08cw")
 inventory_res = ExtResource("2_8oxm1")
+slot_scene = ExtResource("3_wrc4a")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_right = 23.0
-offset_bottom = 40.0
+offset_right = 65.0
+offset_bottom = 270.0
 
-[node name="inventory_slot_ui" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui2" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui3" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui4" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui5" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui6" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui7" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui8" parent="GridContainer" instance=ExtResource("3_wrc4a")]
-layout_mode = 2
-
-[node name="inventory_slot_ui9" parent="GridContainer" instance=ExtResource("3_wrc4a")]
+[node name="SlotContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2

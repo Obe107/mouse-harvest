@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=16 format=3 uid="uid://c8rpup1h83kjc"]
 
-[ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/farmland.png" id="1_e3020"]
-[ext_resource type="Texture2D" uid="uid://vtoqasgxaul2" path="res://art/grass.png" id="2_02c43"]
+[ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/tiles/farmland.png" id="1_e3020"]
+[ext_resource type="Texture2D" uid="uid://vtoqasgxaul2" path="res://art/tiles/grass.png" id="2_02c43"]
 [ext_resource type="Shader" uid="uid://csd4by76bu2t" path="res://other/grass_shader.gdshader" id="2_3j5wi"]
-[ext_resource type="Texture2D" uid="uid://bf81plsxcmq8k" path="res://art/grass_overlay.png" id="3_e8l5q"]
-[ext_resource type="Texture2D" uid="uid://l7t062rwyxoa" path="res://art/obsticle.png" id="3_peyie"]
-[ext_resource type="Texture2D" uid="uid://bptscwm3u7hkn" path="res://art/crop.png" id="4_peyie"]
-[ext_resource type="Texture2D" uid="uid://bprxpq6f34128" path="res://art/crop2.png" id="5_x7jcc"]
-[ext_resource type="Texture2D" uid="uid://deugabrljefms" path="res://art/wheat.png" id="8_p2fuk"]
+[ext_resource type="Texture2D" uid="uid://bf81plsxcmq8k" path="res://art/tiles/grass_overlay.png" id="3_e8l5q"]
+[ext_resource type="Texture2D" uid="uid://l7t062rwyxoa" path="res://art/tiles/obsticle.png" id="3_peyie"]
+[ext_resource type="Texture2D" uid="uid://bptscwm3u7hkn" path="res://art/tiles/crop.png" id="4_peyie"]
+[ext_resource type="Texture2D" uid="uid://bprxpq6f34128" path="res://art/tiles/crop2.png" id="5_x7jcc"]
+[ext_resource type="Texture2D" uid="uid://deugabrljefms" path="res://art/tiles/wheat.png" id="8_p2fuk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujgj0"]
 texture = ExtResource("1_e3020")

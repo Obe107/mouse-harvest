@@ -92,6 +92,7 @@ func place_tile_confirm(grid_coords: Vector2, tile_item: TileItem, inventory: In
 	# Place the tile visually
 	print("Placing a tile with tile_index " + str(tile_item.tile_index) + " at " + str(grid_coords) + " on layer " + str(layer))
 	BetterTerrain.set_cell(tilemap_layers[layer], grid_coords, tile_item.tile_index)
+	BetterTerrain.update_terrain_cell(tilemap_layers[layer], grid_coords, true)
 	if inventory:
 		inventory.remove_item(tile_item, 1)
 

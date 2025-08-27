@@ -22,11 +22,7 @@ var grid_size := 16
 var last_grid_coords = null
 
 # Load items
-var farmland_item: InventoryItem = preload("res://items/farmland.tres")
-#var tool_item: InventoryItem = preload("res://items/tool.tres")
-#var object_item: InventoryItem = preload("res://items/object.tres")
-#var crop_item: CropItem = preload("res://items/crop.tres")
-#var crop_item2: CropItem = preload("res://items/crop2.tres")
+var farmland_item: InventoryItem = preload("res://items/tile_items/farmland.tres")
 
 var player_inv: Inventory = preload("res://player_inv.tres")
 
