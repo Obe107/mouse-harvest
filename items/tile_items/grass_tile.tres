@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TileItem" load_steps=2 format=3 uid="uid://c5800isf0obl3"]
+
+[ext_resource type="Script" uid="uid://cpy2oiv8tlons" path="res://scripts/item/TileItem.gd" id="1_6jeux"]
+
+[resource]
+script = ExtResource("1_6jeux")
+tile_index = 1
+tile_type = 0
+item_name = "Grass Tile"
+type = 1
+metadata/_custom_type_script = "uid://cpy2oiv8tlons"
