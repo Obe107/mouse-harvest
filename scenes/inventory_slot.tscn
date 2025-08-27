@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg2wv6ovp5vv6"]
+[gd_scene load_steps=4 format=3 uid="uid://bg2wv6ovp5vv6"]
 
 [ext_resource type="Script" uid="uid://ct2fa5f7md76f" path="res://scripts/inventory/InventorySlotUi.gd" id="1_bxqf6"]
 [ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/tiles/farmland.png" id="2_hddt5"]
+[ext_resource type="LabelSettings" uid="uid://b6vmpl3c06orr" path="res://other/ui/inv_item_label_settings.tres" id="3_hddt5"]
 
 [node name="inventory_slot_ui" type="Button"]
 custom_minimum_size = Vector2(64, 16)
@@ -16,8 +17,8 @@ script = ExtResource("1_bxqf6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 107.0
-offset_bottom = 23.0
+offset_right = 59.0
+offset_bottom = 16.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
@@ -28,5 +29,6 @@ stretch_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "Item Name"
+label_settings = ExtResource("3_hddt5")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
