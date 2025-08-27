@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://darum7hmh3i2i" path="res://art/farmland.png" id="1_e3020"]
 [ext_resource type="Texture2D" uid="uid://vtoqasgxaul2" path="res://art/grass.png" id="2_02c43"]
-[ext_resource type="Shader" uid="uid://csd4by76bu2t" path="res://grass_shader.gdshader" id="2_3j5wi"]
+[ext_resource type="Shader" uid="uid://csd4by76bu2t" path="res://other/grass_shader.gdshader" id="2_3j5wi"]
 [ext_resource type="Texture2D" uid="uid://bf81plsxcmq8k" path="res://art/grass_overlay.png" id="3_e8l5q"]
 [ext_resource type="Texture2D" uid="uid://l7t062rwyxoa" path="res://art/obsticle.png" id="3_peyie"]
 [ext_resource type="Texture2D" uid="uid://bptscwm3u7hkn" path="res://art/crop.png" id="4_peyie"]

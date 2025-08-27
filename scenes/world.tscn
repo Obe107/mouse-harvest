@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmsnf5b6g5lbb"]
+
+[ext_resource type="Script" uid="uid://go135mgub2qi" path="res://scripts/world.gd" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://6vi1koenk4si" path="res://scenes/inventory_gui.tscn" id="2_k0juu"]
+[ext_resource type="TileSet" uid="uid://c8rpup1h83kjc" path="res://other/main_tile_set.tres" id="3_71j4m"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_4wyf3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+
+[node name="InventoryGUI" parent="Camera2D" instance=ExtResource("2_k0juu")]
+offset_left = -237.0
+offset_top = -132.0
+offset_right = -197.0
+offset_bottom = -92.0
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = 116.0
+offset_top = -129.0
+offset_right = 236.0
+offset_bottom = -106.0
+text = "ItemNameHere"
+
+[node name="PointsLabel" type="Label" parent="Camera2D"]
+offset_left = 119.0
+offset_top = -104.0
+offset_right = 239.0
+offset_bottom = -81.0
+text = "ItemNameHere"
+
+[node name="TileMap" type="Node" parent="."]
+
+[node name="FarmlandTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("3_71j4m")
+
+[node name="GrassTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("3_71j4m")
+
+[node name="CropsTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("3_71j4m")
+
+[node name="DecorTileLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("3_71j4m")

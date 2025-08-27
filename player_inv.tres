@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=11 format=3 uid="uid://d1hd88hg1j0k8"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=12 format=3 uid="uid://d1hd88hg1j0k8"]
 
-[ext_resource type="Script" uid="uid://buhcngy2bmvkl" path="res://scripts/InventorySlot.gd" id="1_61b3x"]
-[ext_resource type="Script" uid="uid://be7gjqvxd707i" path="res://scripts/Inventory.gd" id="2_ps603"]
+[ext_resource type="Script" uid="uid://buhcngy2bmvkl" path="res://scripts/inventory/InventorySlotRes.gd" id="1_61b3x"]
+[ext_resource type="Script" uid="uid://be7gjqvxd707i" path="res://scripts/inventory/Inventory.gd" id="2_ps603"]
 [ext_resource type="Resource" uid="uid://dup0lgtvekp5p" path="res://items/crop.tres" id="2_q1r45"]
 [ext_resource type="Resource" uid="uid://oexf5fy6ujdv" path="res://items/object.tres" id="3_61b3x"]
 [ext_resource type="Resource" uid="uid://cw4mwrqytx6nu" path="res://items/farmland.tres" id="4_q1r45"]
+[ext_resource type="Resource" uid="uid://bd87v1w3t5b8p" path="res://items/tool.tres" id="5_rrnhb"]
 
 [sub_resource type="Resource" id="Resource_3c1vy"]
 script = ExtResource("1_61b3x")
 item = ExtResource("2_q1r45")
-amount = 1
+amount = 1000
 metadata/_custom_type_script = "uid://buhcngy2bmvkl"
 
 [sub_resource type="Resource" id="Resource_2vbhl"]
@@ -31,7 +32,8 @@ metadata/_custom_type_script = "uid://buhcngy2bmvkl"
 
 [sub_resource type="Resource" id="Resource_dpcxh"]
 script = ExtResource("1_61b3x")
-amount = 0
+item = ExtResource("5_rrnhb")
+amount = 1
 metadata/_custom_type_script = "uid://buhcngy2bmvkl"
 
 [resource]

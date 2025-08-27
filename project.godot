@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
-TileManager="*res://scripts/TileManager.gd"
-Global="*res://scripts/Global.gd"
+TileManager="*res://scripts/autoload/TileManager.gd"
+Global="*res://scripts/autoload/Global.gd"
 
 [display]
 

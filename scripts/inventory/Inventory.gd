@@ -45,6 +45,13 @@ func insert_item(item: InventoryItem, amount: int):
 				#	hold_item.emit(item)
 				return
 
+# Checks if an item is in the invenentory
+func is_item_in_inv(item: InventoryItem):
+	for slot in inventory_slots:
+		if slot.item == item:
+			return true
+	
+	return false
 
 func remove_item(item: InventoryItem, amount: int) -> void:
 	for slot in inventory_slots:

@@ -23,6 +23,7 @@ var type_to_layer := {
 	TileItem.TileItemType.DECOR: Layer.DECOR
 }
 
+
 func setup(_tilemap_layers):
 	tilemap_layers = _tilemap_layers
 
@@ -39,6 +40,34 @@ func place_tile(grid_coords: Vector2, tile_item: TileItem, inventory: Inventory)
 		print("Skipped placing at " + str(grid_coords) + " on layer " + str(layer) + " (tile already exists)")
 		return
 	
+	# Get the tile at the decor layer
+	var tile_decor_layer = BetterTerrain.get_cell(tilemap_layers[Layer.DECOR], grid_coords)
+	
+	# if there's a tile at the decor layer, don't place
+	if tile_decor_layer != -1:
+		print("Skipped placing at " + str(grid_coords) + " on layer " + str(layer) + " (tile already exists at decor layer)")
+		return
+	
+	# If this is a crop, check if there is farmland below (layer 0)
+	if tile_item.tile_type == TileItem.TileItemType.CROPS:
+		var farmland_tile = BetterTerrain.get_cell(tilemap_layers[Layer.FARMLAND], grid_coords)
+		if farmland_tile == -1:
+			print("Cannot plant crop at", grid_coords, "- no farmland below!")
+			return  # skip planting if no farmland
+	
+	
+	
+	if inventory && inventory.is_item_in_inv(tile_item):
+		place_tile_confirm(grid_coords, tile_item, inventory)
+		
+	elif inventory && !inventory.is_item_in_inv(tile_item):
+		print("Item we are trying to place is not in the inv!")
+
+
+func place_tile_confirm(grid_coords: Vector2, tile_item: TileItem, inventory: Inventory) -> void:
+	# Determine the correct layer automatically
+	var layer = type_to_layer.get(tile_item.tile_type, Layer.DECOR)
+
 	# If this is a farmland, check if there is grass above (layer 1)
 	if tile_item.tile_type == TileItem.TileItemType.FARMLAND:
 		var grass_tile = BetterTerrain.get_cell(tilemap_layers[Layer.GROUND], grid_coords)
@@ -48,17 +77,12 @@ func place_tile(grid_coords: Vector2, tile_item: TileItem, inventory: Inventory)
 			BetterTerrain.update_terrain_cell(tilemap_layers[Layer.GROUND], grid_coords, true)
 
 
-	# If this is a crop, check if there is farmland below (layer 0)
+	# If this is a crop
 	if tile_item.tile_type == TileItem.TileItemType.CROPS:
-		var farmland_tile = BetterTerrain.get_cell(tilemap_layers[Layer.FARMLAND], grid_coords)
-		if farmland_tile == -1:
-			print("Cannot plant crop at", grid_coords, "- no farmland below!")
-			return  # skip planting if no farmland
-		
 		# Track crop in dictionary
 		print("Crop Item Placed!")
 		crops[grid_coords] = {
-			"seed": tile_item,
+			"item": tile_item,
 			"current_stage": 0,
 			"timer": 0.0,
 			"fully_grown": false,
@@ -84,6 +108,7 @@ func remove_tile(grid_coords: Vector2, layer: int) -> void:
 	# Otherwise, remove the tile
 	print("Removing a tile at" + str(grid_coords) + " on layer " + str(layer))
 	BetterTerrain.set_cell(tilemap_layers[layer], grid_coords, -1)
+	BetterTerrain.update_terrain_cell(tilemap_layers[layer], grid_coords, true)
 	
 	# If a crop existed here, remove it from the crops dictionary
 	if crops.has(grid_coords):
@@ -97,7 +122,7 @@ func _process(delta):
 func update_crops(delta: float) -> void:
 	for grid_coords in crops.keys():
 		var crop_data = crops[grid_coords]
-		var seed_item: CropItem = crop_data["seed"]
+		var seed_item: CropItem = crop_data["item"]
 
 		# Increment growth timer
 		crop_data["timer"] += delta
@@ -125,7 +150,7 @@ func update_crops(delta: float) -> void:
 				print("Tile at", grid_coords, "is fully grown!")
 
 
-func harvest_crop(grid_coords: Vector2):
+func harvest_crop(grid_coords: Vector2, inventory: Inventory):
 	if not crops.has(grid_coords):
 		print("No crop here!")
 		return # nothing to harvest
@@ -133,8 +158,10 @@ func harvest_crop(grid_coords: Vector2):
 	var crop_data = crops[grid_coords]
 
 	if crop_data["fully_grown"]:
-		# Give player items here (from crop_data["seed"])
-		print("Harvested crop at", grid_coords)
+		# Give player items here (from crop_data["item"])
+		print("Harvested crop", crop_data["item"].item_name, " at", grid_coords)
+		Global.total_harvested_crops += 1
+		inventory.insert_item(crop_data["item"], 1)
 
 		# Remove tile visually
 		BetterTerrain.set_cell(tilemap_layers[2], grid_coords, -1)

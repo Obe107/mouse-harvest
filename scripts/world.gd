@@ -12,6 +12,7 @@ var removing_tile := false
 var harvesting_tile := false
 var moving_camera := false
 var last_mouse_pos := Vector2.ZERO
+
 # Zoom limits
 const MIN_ZOOM := 1
 const MAX_ZOOM := 3.0
@@ -22,10 +23,10 @@ var last_grid_coords = null
 
 # Load items
 var farmland_item: InventoryItem = preload("res://items/farmland.tres")
-var tool_item: InventoryItem = preload("res://items/tool.tres")
-var object_item: InventoryItem = preload("res://items/object.tres")
-var crop_item: CropItem = preload("res://items/crop.tres")
-var crop_item2: CropItem = preload("res://items/crop2.tres")
+#var tool_item: InventoryItem = preload("res://items/tool.tres")
+#var object_item: InventoryItem = preload("res://items/object.tres")
+#var crop_item: CropItem = preload("res://items/crop.tres")
+#var crop_item2: CropItem = preload("res://items/crop2.tres")
 
 var player_inv: Inventory = preload("res://player_inv.tres")
 
@@ -53,6 +54,7 @@ func generate_map() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+		
 			if Global.selected_item.type == InventoryItem.ItemType.TILE:
 				placing_tile = event.pressed # true when pressed down, false when released
 				last_grid_coords = null
@@ -90,18 +92,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
-			KEY_1:
-				Global.selected_item = farmland_item
-				print("Selected:", Global.selected_item.item_name)
-			KEY_2:
-				Global.selected_item = tool_item
-				print("Selected:", Global.selected_item.item_name)
-			KEY_3:
-				Global.selected_item = crop_item
-				print("Selected:", Global.selected_item.item_name)
-			KEY_4:
-				Global.selected_item = crop_item2
-				print("Selected:", Global.selected_item.item_name)
 			
 			KEY_8:
 				player_inv.insert_item(farmland_item, 1)
@@ -113,20 +103,23 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
+	
+	$Camera2D/PointsLabel.text = str(Global.total_harvested_crops)
+	
 	var grid_coords = (get_global_mouse_position() / grid_size).floor()
-	if placing_tile: 	# Only place a tile if the mouse is being held down
+	if placing_tile:  # Only place a tile if the mouse is being held down
 		if grid_coords != last_grid_coords: 	# Check if we've moved into a new cell before placing
 			TileManager.place_tile(grid_coords, Global.selected_item, player_inv)
 			last_grid_coords = grid_coords
 
 	elif removing_tile:
 		if grid_coords != last_grid_coords:
-			TileManager.remove_tile(grid_coords, 1)
+			TileManager.remove_tile(grid_coords, 3)
 			last_grid_coords = grid_coords
-	
+
 	elif harvesting_tile:
 		if grid_coords != last_grid_coords:
-			TileManager.harvest_crop(grid_coords)
+			TileManager.harvest_crop(grid_coords, player_inv)
 			last_grid_coords = grid_coords
 
 	if Global.selected_item:
