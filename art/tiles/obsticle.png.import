@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bprxpq6f34128"
-path="res://.godot/imported/crop2.png-c056168aa28355195ee05b051ddaf996.ctex"
+uid="uid://l7t062rwyxoa"
+path="res://.godot/imported/obsticle.png-d1882ff03cbd3b925c94a47645ea556b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/crop2.png"
-dest_files=["res://.godot/imported/crop2.png-c056168aa28355195ee05b051ddaf996.ctex"]
+source_file="res://art/tiles/obsticle.png"
+dest_files=["res://.godot/imported/obsticle.png-d1882ff03cbd3b925c94a47645ea556b.ctex"]
 
 [params]
 

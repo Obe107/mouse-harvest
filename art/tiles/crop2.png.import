@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://darum7hmh3i2i"
-path="res://.godot/imported/farmland.png-15d3fc6e4d2dc7cc55a8240a51eaf330.ctex"
+uid="uid://bprxpq6f34128"
+path="res://.godot/imported/crop2.png-5322e1a72366c3317817a43580613422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/farmland.png"
-dest_files=["res://.godot/imported/farmland.png-15d3fc6e4d2dc7cc55a8240a51eaf330.ctex"]
+source_file="res://art/tiles/crop2.png"
+dest_files=["res://.godot/imported/crop2.png-5322e1a72366c3317817a43580613422.ctex"]
 
 [params]
 
